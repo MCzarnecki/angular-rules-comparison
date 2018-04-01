@@ -1,0 +1,58 @@
+<div class="container-fluid p-4">
+
+  <div class="row">
+    <div class="form-group row pl-4 pt-1 ml-3">
+      <input type="checkbox" class="form-check-input" id="noSharedSearch" [(ngModel)]="shared">
+      <label class="form-check-label" for="noSharedSearch">Hide shared rules</label>
+    </div>
+    <div class="form-group row pl-4 ml-3">
+      <label for="symbolSearch" class="col-form-label">Symbol</label>
+      <div class>
+        <input type="text" class="form-control ml-2" id="symbolSearch" placeholder="Symbol value" [(ngModel)]="value">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th scope="col">Left</th>
+          <th scope="col">Right 1</th>
+          <th scope="col">Right 2</th>
+          <th scope="col">Origin</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let rule of firstIterationRules | symbolSharedSearch:sameRules:shared | symbolSearch:value" [ngClass]="selectRuleClass(rule)">
+          <td>{{rule.left.value}}</td>
+          <td>{{rule.right1.value}}</td>
+          <td>{{rule.right2.value}}</td>
+          <td>{{rule.origin}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-6">
+      <table class="table table-bordered col-5">
+        <thead>
+        <tr>
+          <th scope="col">Left</th>
+          <th scope="col">Right 1</th>
+          <th scope="col">Right 2</th>
+          <th scope="col">Origin</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let rule of secondIterationRules | symbolSharedSearch:sameRules:shared" [ngClass]="selectRuleClass(rule)">
+          <td>{{rule.left.value}}</td>
+          <td>{{rule.right1.value}}</td>
+          <td>{{rule.right2.value}}</td>
+          <td>{{rule.origin}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
