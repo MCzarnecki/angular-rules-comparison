@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Rule} from '../../../shared/models/rule';
+import {Rule} from '../models/rule';
 
 @Pipe({name: 'symbolSearch'})
 export class SymbolSearchPipe implements PipeTransform {

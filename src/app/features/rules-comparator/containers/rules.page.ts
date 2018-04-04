@@ -2,8 +2,8 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'rules-comparison-view',
-  templateUrl: './rules-comparison.view.html'
+  templateUrl: './rules.page.html'
 })
-export class RulesComparisonView {
+export class RulesComparisonPage {
 
 }

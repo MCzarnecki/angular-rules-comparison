@@ -1,0 +1,30 @@
+<div class="container-fluid p-4">
+  <div class="custom-file col-4">
+    <input type="file" class="custom-file-input" id="customFile" (change)="handleFileUpload($event.target.files)">
+    <label class="custom-file-label" for="customFile">Choose file</label>
+  </div>
+</div>
+
+<ng-container *ngIf="!!iterations">
+  <div class="container-fluid">
+    <div class="row p-4">
+      <select class="custom-select col-6" (change)="firstItSelected($event.target.value)">
+        <option *ngFor="let iteration of iterations; let i = index" [attr.data-index]="i">
+          {{i}}
+        </option>
+      </select>
+      <select class="custom-select col-6" (change)="secondItSelected($event.target.value)">
+        <option *ngFor="let iteration of iterations; let i = index" [attr.data-index]="i">
+          {{i}}
+        </option>
+      </select>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!!firstIteration && !!secondIteration && !!rulesComparison">
+  <rules-comparison-table [firstIterationRules]="firstIteration.rules"
+                          [secondIterationRules]="secondIteration.rules"
+                          [rulesComparison]="rulesComparison"
+  ></rules-comparison-table>
+</ng-container>

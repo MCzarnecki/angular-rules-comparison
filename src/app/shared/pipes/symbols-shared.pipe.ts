@@ -1,10 +1,9 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Rule} from '../../../shared/models/rule';
+import {Rule} from '../models/rule';
 
 @Pipe({name: 'symbolSharedSearch'})
 export class SymbolSharedSearchPipe implements PipeTransform {
   transform(rules: Rule[], shared: Rule[], show: boolean): Rule[] {
-
     if (!show || shared === []) {
       return rules;
     }

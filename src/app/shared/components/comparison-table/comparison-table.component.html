@@ -25,7 +25,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let rule of firstIterationRules | symbolSharedSearch:sameRules:shared | symbolSearch:value" [ngClass]="selectRuleClass(rule)">
+        <tr *ngFor="let rule of firstIterationRules | symbolSharedSearch:rulesComparison.sameRules:shared | symbolSearch:value" [ngClass]="selectRuleClass(rule)">
           <td>{{rule.left.value}}</td>
           <td>{{rule.right1.value}}</td>
           <td>{{rule.right2.value}}</td>
@@ -45,7 +45,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let rule of secondIterationRules | symbolSharedSearch:sameRules:shared" [ngClass]="selectRuleClass(rule)">
+        <tr *ngFor="let rule of secondIterationRules | symbolSharedSearch:rulesComparison.sameRules:shared" [ngClass]="selectRuleClass(rule)">
           <td>{{rule.left.value}}</td>
           <td>{{rule.right1.value}}</td>
           <td>{{rule.right2.value}}</td>

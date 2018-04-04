@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {RulesComparisonView} from './containers/rules-comparison.view';
+import {RulesComparisonPage} from './containers/rules.page';
 import {RulesComparisonInputComponent} from './components/input/rules-comparison-input';
-import {RulesComparisonComponent} from './components/rules-comparison/rules-comparison.component';
+import {ComparisonView} from './containers/comparison/comparison.view';
 
 const routes = [
-  {path: '', component: RulesComparisonView, children: [
+  {path: '', component: RulesComparisonPage, children: [
     {path: '', component: RulesComparisonInputComponent},
-    {path: 'comparison', component: RulesComparisonComponent}
+    {path: 'comparison', component: ComparisonView}
   ]}
 ];
 
